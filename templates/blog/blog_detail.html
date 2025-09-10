@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<article>
+  <header class="mb-3">
+    <h1 class="h3">{{ post.title }}</h1>
+    <div class="text-muted small">{{ post.created_at|date:"M d, Y" }}</div>
+  </header>
+  <div class="content">
+    {{ post.body|linebreaks }}
+  </div>
+</article>
+{% endblock %}

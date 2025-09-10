@@ -1,0 +1,4 @@
+/* Minimal custom styles */
+body { background-color: #fafafa; }
+.navbar-brand { letter-spacing: 0.3px; }
+.progress { height: 8px; }

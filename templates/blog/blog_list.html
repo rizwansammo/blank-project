@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="h3 mb-4">Blog</h1>
+<div class="vstack gap-4">
+  {% for post in posts %}
+  <article>
+    <h2 class="h4 mb-1"><a href="{% url 'blog_detail' post.slug %}">{{ post.title }}</a></h2>
+    <div class="text-muted small mb-2">{{ post.created_at|date:"M d, Y" }}</div>
+    <p class="mb-0">{{ post.excerpt|default:post.body|truncatewords:40 }}</p>
+  </article>
+  {% empty %}
+  <p>No posts yet.</p>
+  {% endfor %}
+</div>
+{% endblock %}
